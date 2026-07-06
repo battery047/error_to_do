@@ -82,18 +82,7 @@ settings_manager.py: INI配置文件读写，保存串口/SSH/CSV参数
 | DSP→上位机    | 0x06 | ACK                     |
 | DSP→上位机    | 0x15 | NACK                    |
 =======
-| 方向  | 命令  | 说明  |
-| --- | --- | --- |
-| 上位机→DSP | 0x01 | 开始发送 |
-| 上位机→DSP | 0x02 | 停止发送 |
-| 上位机→DSP | 0x03 | 请求特征结果 |
-| 上位机→DSP | 0x04 | 数据总长度(4B) |
-| 上位机→DSP | 0x10 | 波形数据(int16) |
-| 上位机→RK3566 | 0x22 | 本地17维特征(float32×17) |
-| DSP→上位机 | 0x21 | DSP提取的17维特征(float32×17) |
-| DSP→上位机 | 0x06 | ACK |
-| DSP→上位机 | 0x15 | NACK |
->>>>>>> 89a105deea57f8131a87a3cc951fa6ac638a8130
+
 
 ### 1.5 使用教程
 
@@ -168,16 +157,6 @@ RK3588会自动保存推理结果到system_test_logs/
 | 召回率      | 真实发生的某类故障中被正确诊断的比例（衡量故障发现能力）   |
 | F1-Score | 精确率与召回率的调和平均，综合衡量诊断可靠性         |
 =======
-| 指标  | 说明  |
-| --- | --- |
-| 单次诊断耗时 | 从DSP检测到波形异常到RK3588输出诊断结果的全流程时间 |
-| 特征提取耗时 | DSP对单周期波形计算17种时频域特征的时间 |
-| 推理耗时 | RK3588 NPU完成一次CNN推理的时间 |
-| 准确率 | 所有诊断结果中判断正确的比例 |
-| 精确率 | 诊断为某类故障中真正属于该类的比例（衡量报警可信度） |
-| 召回率 | 真实发生的某类故障中被正确诊断的比例（衡量故障发现能力） |
-| F1-Score | 精确率与召回率的调和平均，综合衡量诊断可靠性 |
->>>>>>> 89a105deea57f8131a87a3cc951fa6ac638a8130
 
 ### 1.7 环境依赖
 
@@ -233,11 +212,7 @@ python serial_debug.py --port /dev/ttyUSB0 --baud 9600
 | --port | -p  | 串口设备路径 | /dev/ttyUSB0 |
 | --baud | -b  | 波特率    | 9600         |
 =======
-| 参数  | 简写  | 说明  | 默认值 |
-| --- | --- | --- | --- |
-| --port | -p  | 串口设备路径 | /dev/ttyUSB0 |
-| --baud | -b  | 波特率 | 9600 |
->>>>>>> 89a105deea57f8131a87a3cc951fa6ac638a8130
+
 
 #### infer_rk3588_ATP.py
 
@@ -288,16 +263,7 @@ python infer_rk3588_S1TDP.py --port /dev/ttyS1 --baud 115200 --cores 1
 | --mode      | -   | 数据格式: binary或ascii | binary                   |
 | --verbose   | -v  | 显示详细概率分布           | 关闭                       |
 =======
-| 参数  | 简写  | 说明  | 默认值 |
-| --- | --- | --- | --- |
-| --port | -p  | 串口设备路径 | /dev/ttyS1 |
-| --baud | -b  | 波特率 | 115200 |
-| --model_dir | -m  | 模型存放目录 | model |
-| --model | -n  | RKNN模型文件名 | fault_diagnosis_cnn.rknn |
-| --cores | -c  | NPU核心数 (1/2/3) | 1   |
-| --mode | -   | 数据格式: binary或ascii | binary |
-| --verbose | -v  | 显示详细概率分布 | 关闭  |
->>>>>>> 89a105deea57f8131a87a3cc951fa6ac638a8130
+
 
 #### infer_rk3588_S1TP.py
 
@@ -319,17 +285,6 @@ python infer_rk3588_S1TP.py --port /dev/ttyS1 --baud 115200 --cores 1
 | --mode       | -   | 数据格式: binary或ascii  | ascii                    |
 | --num_points | -N  | 每次读取的采样点数(binary模式) | 1024                     |
 =======
-| 参数  | 简写  | 说明  | 默认值 |
-| --- | --- | --- | --- |
-| --port | -p  | 串口设备路径 | /dev/ttyS1 |
-| --baud | -b  | 波特率 | 115200 |
-| --model_dir | -m  | 模型存放目录 | model |
-| --model | -n  | RKNN模型文件名 | fault_diagnosis_cnn.rknn |
-| --cores | -c  | NPU核心数 (1/2/3) | 1   |
-| --mode | -   | 数据格式: binary或ascii | ascii |
-| --num_points | -N  | 每次读取的采样点数(binary模式) | 1024 |
->>>>>>> 89a105deea57f8131a87a3cc951fa6ac638a8130
-
 ---
 
 ## 4 授权书
