@@ -7,6 +7,7 @@
 上位机软件，基于 Python/PySide6 开发，负责波形数据加载、串口通信、批量测试、性能评估和文件传输。
 
 ### 项目结构
+```bash
 error_to_do_assist/
 ├── main.py                         # 主程序入口
 ├── resources/
@@ -43,6 +44,7 @@ error_to_do_assist/
 ├── logs/
 ├── storage/
 └── models/
+```
 
 ### 功能页面
 
